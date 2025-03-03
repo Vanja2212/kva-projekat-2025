@@ -24,3 +24,9 @@ body {
 .example-card{
     width: 400px;
 }
+.wrapper{
+    margin-top: 30px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

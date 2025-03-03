@@ -1,0 +1,43 @@
+<div class="wrapper"  *ngIf="dataSource">
+    <h1> <i class="fa-solid fa-magnifying-glass-location"></i>  Search your flight:</h1>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> <i class="fa-regular fa-id-card"></i>  ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="destination">
+    <th mat-header-cell *matHeaderCellDef><i class="fa-solid fa-location-pin"></i>  Destination </th>
+    <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="flightNumber">
+    <th mat-header-cell *matHeaderCellDef><i class="fa-solid fa-business-time"></i> FlightNumber </th>
+    <td mat-cell *matCellDef="let element"> {{element.flightNumber}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="scheduledAt">
+    <th mat-header-cell *matHeaderCellDef><i class="fa-solid fa-calendar-days"></i>  ScheduledAt </th>
+    <td mat-cell *matCellDef="let element"> {{element.scheduledAt | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef><i class="fa-solid fa-location-arrow"></i>  Actions </th>
+        <td mat-cell *matCellDef="let element">
+        <button mat-button>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+        </button>
+        <button mat-button>
+        <i class="fa-solid fa-cart-shopping"></i> Book Now
+        </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+</div>
